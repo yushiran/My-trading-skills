@@ -50,7 +50,9 @@ run locally — no gateway, unlike the Futu OpenD path. `plugins/ibkr` carries t
 claude plugin install ibkr@yushiran-trading
 ```
 
-registers `https://api.ibkr.com/v1/api/mcp` as well. The first call opens a browser
+registers `https://api.ibkr.com/v1/api/mcp-public` as well. Use the `-public` endpoint, not
+`/mcp`: the latter is reserved for platforms' certified connectors and rejects a generic MCP
+client with `400 Unsupported client` *after* the OAuth handshake succeeds. The first call opens a browser
 for OAuth sign-in. **Orders never execute automatically** — the server drafts
 instructions and execution stays in IBKR's own interface.
 
