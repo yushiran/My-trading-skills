@@ -1,0 +1,8 @@
+{
+  "name": "ibkr",
+  "description": "Interactive Brokers via IBKR's official hosted MCP server: positions, balances, margin, P&L, transactions, option chains and risk exposures",
+  "version": "1.0.0",
+  "author": {
+    "name": "Shiran Yu"
+  }
+}

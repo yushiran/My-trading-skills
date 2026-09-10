@@ -20,6 +20,7 @@ namespaced: `yushiran-trading:binance`.
 
 | Plugin | Repository | Skills taken | Tracks |
 | --- | --- | --- | --- |
+| `ibkr` | this repo, `plugins/ibkr` — wraps [IBKR's official hosted MCP](https://www.interactivebrokers.com/en/trading/ai-integrations.php) | `ibkr` **+ the MCP server itself** | local |
 | `trading212-api` | [trading212-labs/agent-skills](https://github.com/trading212-labs/agent-skills) | `trading212-api` | `master` |
 | `binance` | [binance/binance-skills-hub](https://github.com/binance/binance-skills-hub) | `binance`, `fiat`, `p2p`, `payment`, `onchain-pay`, `square-post`, `academy-skill` | `main` |
 | `binance-web3` | [binance/binance-skills-hub](https://github.com/binance/binance-skills-hub) | the 12 `binance-web3` skills: agentic wallet, wallet and whale tracking, token info and audits, market rank, meme rush, trading signals, leaderboard | `main` |
@@ -38,6 +39,24 @@ the next update. Nothing is vendored — no skill content is redistributed here.
 
 Broker APIs change, and a stale skill against a changed API is worse than an
 unreviewed one, which is why these are not pinned by commit.
+
+## `ibkr` installs an MCP server, not just a skill
+
+IBKR published an official hosted MCP endpoint on 2026-07-28, so there is nothing to
+run locally — no gateway, unlike the Futu OpenD path. `plugins/ibkr` carries the
+`.mcp.json` that registers it plus a SKILL.md with the working rules, so:
+
+```sh
+claude plugin install ibkr@yushiran-trading
+```
+
+registers `https://api.ibkr.com/v1/api/mcp` as well. The first call opens a browser
+for OAuth sign-in. **Orders never execute automatically** — the server drafts
+instructions and execution stays in IBKR's own interface.
+
+Schwab has no equivalent: confirmed 2026-09-10 that the Trader API is not offered to
+international (non-US) clients, so there is nothing to wire up. The community
+`schwab-mcp` servers are therefore moot for this account.
 
 ## Caveats worth knowing
 

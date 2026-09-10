@@ -10,6 +10,11 @@
   ],
   "plugins": [
     {
+      "name": "ibkr",
+      "description": "Interactive Brokers via IBKR's official hosted MCP server: positions, balances, margin, P&L, transactions, option chains, risk exposures. Installing this plugin registers the MCP server",
+      "source": "./plugins/ibkr"
+    },
+    {
       "name": "trading212-api",
       "description": "Trading 212 API: accounts, positions, orders, instruments, history (official)",
       "source": {
