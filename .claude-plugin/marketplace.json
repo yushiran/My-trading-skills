@@ -1,0 +1,50 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "yushiran-trading",
+  "description": "Trading skills for Claude Code: broker APIs, market data, and market-anomaly detection",
+  "owner": {
+    "name": "Shiran Yu"
+  },
+  "allowCrossMarketplaceDependenciesOn": [
+    "claude-plugins-official"
+  ],
+  "plugins": [
+    {
+      "name": "trading212-api",
+      "description": "Trading 212 API: accounts, positions, orders, instruments, history (official, pinned)",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/trading212-labs/agent-skills.git",
+        "sha": "edd9dc870b16866d75e1778f9e5dfb89fcc74cb4"
+      },
+      "skills": [
+        "./plugins/trading212-api/skills/trading212-api"
+      ]
+    },
+    {
+      "name": "binance",
+      "description": "Binance via binance-cli: Spot, USD-S Futures, Convert, Simple Earn (official, pinned)",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/binance/binance-skills-hub.git",
+        "sha": "7c9565c695d020a027551a5df20bdc92646f9b90"
+      },
+      "skills": [
+        "./skills/binance/binance"
+      ]
+    },
+    {
+      "name": "futu-openapi",
+      "description": "Futu OpenAPI quotes, financials and trading, plus the OpenD installer (official, pinned)",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/FutunnOpen/futu-agent-hub.git",
+        "sha": "966529861b192dc158e6b8c99d8a1f0004ce8e2e"
+      },
+      "skills": [
+        "./Futu API Skills/futuapi",
+        "./Futu API Skills/install-futu-opend"
+      ]
+    }
+  ]
+}
