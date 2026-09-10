@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "yushiran-trading",
-  "description": "Trading skills for Claude Code: broker APIs, market data, and market-anomaly detection",
+  "description": "Trading skills for Claude Code: broker APIs, market data, anomaly detection, and investment research",
   "owner": {
     "name": "Shiran Yu"
   },
@@ -11,11 +11,11 @@
   "plugins": [
     {
       "name": "trading212-api",
-      "description": "Trading 212 API: accounts, positions, orders, instruments, history (official, pinned)",
+      "description": "Trading 212 API: accounts, positions, orders, instruments, history (official)",
       "source": {
         "source": "url",
         "url": "https://github.com/trading212-labs/agent-skills.git",
-        "sha": "edd9dc870b16866d75e1778f9e5dfb89fcc74cb4"
+        "ref": "master"
       },
       "skills": [
         "./plugins/trading212-api/skills/trading212-api"
@@ -23,28 +23,107 @@
     },
     {
       "name": "binance",
-      "description": "Binance via binance-cli: Spot, USD-S Futures, Convert, Simple Earn (official, pinned)",
+      "description": "Binance exchange: binance-cli for Spot/Futures/Convert/Earn, plus fiat, P2P, payments, on-chain pay, Square and Academy (official)",
       "source": {
         "source": "url",
         "url": "https://github.com/binance/binance-skills-hub.git",
-        "sha": "7c9565c695d020a027551a5df20bdc92646f9b90"
+        "ref": "main"
       },
       "skills": [
-        "./skills/binance/binance"
+        "./skills/binance/binance",
+        "./skills/binance/fiat",
+        "./skills/binance/p2p",
+        "./skills/binance/payment",
+        "./skills/binance/onchain-pay",
+        "./skills/binance/square-post",
+        "./skills/binance/academy-skill"
+      ]
+    },
+    {
+      "name": "binance-web3",
+      "description": "Binance Web3: agentic wallet, wallet/whale tracking, token info and audits, market rank, meme rush, trading signals, leaderboard (official)",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/binance/binance-skills-hub.git",
+        "ref": "main"
+      },
+      "skills": [
+        "./skills/binance-web3/binance-agentic-wallet",
+        "./skills/binance-web3/binance-wallet-tracker",
+        "./skills/binance-web3/binance-leaderboard",
+        "./skills/binance-web3/binance-trading-signal",
+        "./skills/binance-web3/binance-tokenized-securities-info",
+        "./skills/binance-web3/binance-sports-ai-analyzer",
+        "./skills/binance-web3/crypto-market-rank",
+        "./skills/binance-web3/meme-rush",
+        "./skills/binance-web3/query-address-info",
+        "./skills/binance-web3/query-token-audit",
+        "./skills/binance-web3/query-token-info",
+        "./skills/binance-web3/trading-signal"
       ]
     },
     {
       "name": "futu-openapi",
-      "description": "Futu OpenAPI quotes, financials and trading, plus the OpenD installer (official, pinned)",
+      "description": "Futu OpenAPI quotes, financials and trading, plus the OpenD installer (official)",
       "source": {
         "source": "url",
         "url": "https://github.com/FutunnOpen/futu-agent-hub.git",
-        "sha": "966529861b192dc158e6b8c99d8a1f0004ce8e2e"
+        "ref": "main"
       },
       "skills": [
         "./Futu API Skills/futuapi",
         "./Futu API Skills/install-futu-opend"
       ]
+    },
+    {
+      "name": "ai-berkshire",
+      "description": "Value-investing research workflows after Buffett, Munger, Duan Yongping and Li Lu: checklists, quality screens, earnings reading, portfolio review (MIT)",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/xbtlin/ai-berkshire.git",
+        "ref": "main"
+      },
+      "skills": [
+        "./codex-skills/investment-checklist",
+        "./codex-skills/quality-screen",
+        "./codex-skills/investment-research",
+        "./codex-skills/investment-team",
+        "./codex-skills/industry-research",
+        "./codex-skills/industry-funnel",
+        "./codex-skills/earnings-review",
+        "./codex-skills/earnings-team",
+        "./codex-skills/financial-data",
+        "./codex-skills/portfolio-review",
+        "./codex-skills/thesis-tracker",
+        "./codex-skills/thesis-drift",
+        "./codex-skills/management-deep-dive",
+        "./codex-skills/news-pulse",
+        "./codex-skills/deep-company-series",
+        "./codex-skills/private-company-research",
+        "./codex-skills/income-investment",
+        "./codex-skills/bottleneck-hunter",
+        "./codex-skills/dyp-ask",
+        "./codex-skills/era-alpha",
+        "./codex-skills/wechat-article"
+      ]
+    },
+    {
+      "name": "trading-skills",
+      "description": "Equity trading and discipline suite: screeners, technical and breadth analysis, regime detection, position sizing, pre-trade gates, drawdown circuit breaker",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/tradermonty/claude-trading-skills.git",
+        "ref": "main"
+      }
+    },
+    {
+      "name": "quant-defi-skills",
+      "description": "Crypto, DeFi and quantitative finance: market microstructure, regime detection, Kelly sizing, risk management, volatility modelling, on-chain and whale analysis",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/agiprolabs/claude-trading-skills.git",
+        "ref": "main"
+      }
     }
   ]
 }
